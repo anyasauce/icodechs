@@ -2,7 +2,6 @@ import { useState } from "react";
 import { ExternalLink, Github, Search } from "lucide-react";
 import StudentPortal from '../assets/projects/StudentPortal.png';
 
-// Define types for the project and tech stack
 interface Project {
   id: number;
   title: string;
@@ -33,7 +32,7 @@ export default function Projects() {
       id: 1,
       title: "Student Portal with E-Wallet Functionality",
       description:
-        "A modern e-commerce solution with real-time inventory management, secure payment processing, and responsive design for optimal mobile experience.",
+        "An all-in-one platform for students to manage their accounts, make secure e-wallet transactions, and track transactions availability in real-time.",
       link: "#",
       githubLink: "#",
       imageUrl: StudentPortal,
