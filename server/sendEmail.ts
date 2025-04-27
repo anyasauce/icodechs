@@ -1,7 +1,8 @@
-const express = require('express');
-const nodemailer = require('nodemailer');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+import express, { Request, Response } from 'express';
+import nodemailer from 'nodemailer';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+
 const app = express();
 const port = 5000;
 
@@ -17,7 +18,8 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-app.post('/api/sendEmail', (req, res) => {
+// Correctly type 'req' and 'res'
+app.post('/api/sendEmail', (req: Request, res: Response) => {
     const { name, email, message, subject } = req.body;
 
     const mailOptions = {
@@ -27,7 +29,8 @@ app.post('/api/sendEmail', (req, res) => {
         text: `You have received a new message from ${name} (${email}):\n\n${message}`,
     };
 
-    transporter.sendMail(mailOptions, (error, info) => {
+    // Correctly type 'error' and 'info'
+    transporter.sendMail(mailOptions, (error: Error | null, info: unknown) => {
         if (error) {
             return res.status(500).json({ message: 'Failed to send message', error: error.message });
         }
