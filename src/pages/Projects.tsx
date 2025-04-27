@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ExternalLink, Github, Search } from "lucide-react";
-import StudentPortal from '../assets/projects/StudentPortal.png';
+import StudentPortal from '../assets/projects/studentportal.png';
 
 interface Project {
   id: number;
