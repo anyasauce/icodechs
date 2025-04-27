@@ -3,15 +3,15 @@
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "target": "ES2022",
     "lib": ["ES2023"],
-    "module": "ESNext",
+    "module": "commonjs",  // Changed to commonjs for Node.js compatibility
     "skipLibCheck": true,
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",  // Changed to node to ensure proper resolution for server code
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
+    "noEmit": false,  // Set to false to allow TypeScript to emit compiled JavaScript
 
     /* Linting */
     "strict": true,
@@ -20,5 +20,8 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["vite.config.ts"]
+  "include": [
+    "server/**/*.ts",  // Include your server directory for compiling server code
+    "vite.config.ts"    // Keep this if you still need to include Vite config
+  ]
 }
