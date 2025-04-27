@@ -21,9 +21,10 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const API_URL = process.env.NODE_ENV === 'production'
-        ? 'https://icodechs.vercel.app/api/sendEmail'
-        : 'http://localhost:5000/api/sendEmail';
+    const API_URL =
+      process.env.NODE_ENV === "production"
+        ? "https://icodechs.vercel.app/api/sendEmail"
+        : "http://localhost:5000/api/sendEmail";
 
     try {
       const response = await fetch(API_URL, {
