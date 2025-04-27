@@ -1,4 +1,3 @@
-
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
@@ -19,12 +18,12 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post('/api/sendEmail', (req, res) => {
-    const { name, email, message } = req.body;
+    const { name, email, message, subject } = req.body;
 
     const mailOptions = {
         from: email,
         to: 'josiahdanielle09gallenero@gmail.com',
-        subject: `Message from ${name}`,
+        subject: subject || `Message from ${name}`,
         text: `You have received a new message from ${name} (${email}):\n\n${message}`,
     };
 
