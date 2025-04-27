@@ -30,8 +30,7 @@ app.post('/api/sendEmail', (req: Request, res: Response) => {
         text: `You have received a new message from ${name} (${email}):\n\n${message}`,
     };
 
-    // Correctly type 'error' and 'info'
-    transporter.sendMail(mailOptions, (error: Error | null, info: unknown) => {
+    transporter.sendMail(mailOptions, (error: Error | null) => {
         if (error) {
             return res.status(500).json({ message: 'Failed to send message', error: error.message });
         }
