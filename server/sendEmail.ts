@@ -1,7 +1,8 @@
-import express, { Request, Response } from 'express';
-import nodemailer from 'nodemailer';
-import bodyParser from 'body-parser';
-import cors from 'cors';
+import * as express from 'express';
+import { Request, Response } from 'express';
+import * as nodemailer from 'nodemailer';
+import * as bodyParser from 'body-parser';
+import * as cors from 'cors';
 
 const app = express();
 const port = 5000;
